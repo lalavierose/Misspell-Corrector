@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Misspell Corrector",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "js/app.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ]
+}
