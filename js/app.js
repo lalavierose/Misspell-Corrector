@@ -8,8 +8,8 @@ let fake;
 const Arabic = ["ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح", "ج",
   "د", "ش", "س", "ي", "ب", "ل", "ا", "ت", "ن", "م", "ك", "ط", "ئ", "ء", "ؤ", "ر",
   "لا", "ى", "ة", "و", "ز", "ظ", " "];
-const English = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]",
-  "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "Z", "X", "C", "V", "B", "N", "M",
+const English = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]",
+  "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "z", "x", "c", "v", "b", "n", "m",
   ",", ".", "/", " "];
 
 function switcher() {
@@ -53,4 +53,17 @@ function corrector() {
     }
   }
   document.getElementById("correction").value = correction;
+}
+
+function copied(){
+  var copyText = document.getElementById("correction");
+
+  copyText.select();
+  navigator.clipboard.writeText(copyText.value);
+}
+
+function pasted(){
+  var pasteText = document.getElementById("original");
+  navigator.clipboard.readText().then(function (text){pasteText.value = text; corrector();})
+
 }

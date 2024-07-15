@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <meta name="description" content="A Chrome extension that corrects misspellings for text written in the wrong keyboard language.">
+  <meta name="keywords" content="Chrome extension, misspell corrector, bilingual, bilingual corrector, keyboard language">
+  <meta name="author" content="Hala Zidan">
 
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -32,13 +34,14 @@
 </select>
 </br> <br>
 <label id="upperText"> ♡ English Misspell ♡ </label> <br>
-<input id="original" type="text" /> <br>
+<input id="original" type="text" oninput="corrector()" />
+<button onclick="pasted()"> Paste</button> <br>
 <br>
-<button id="corrector" onclick="corrector()"> Correct </button>
 <button id="switch" onclick="switcher()" > Switch </button>
 <br> <br>
 <label id="lowerText"> ♡ Arabic Correction ♡ </label> <br>
 <input id="correction"/>
+<button onclick="copied()"> Copy</button>
 <br> <br>
 
 </body>
